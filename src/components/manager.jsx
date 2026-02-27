@@ -175,17 +175,33 @@ const manager = () => {
                 </thead>
                 <tbody className="bg-green-100">
                   {data.map((item, index) => {
+                 // Clean and validate site
+                let site = item.site.trim();
+
+  // Remove any protocol if user typed it
+                site = site.replace(/^https?:\/\//, "");
+
+  // Only render link if it has at least one dot (.)
+                const isValidSite = site.includes(".");
+
+                
                     return (
                       <tr key={item.id} className="border-b border-green-200">
                         <td className="text-center py-2">
                           <div className="flex justify-center items-center gap-1">
-                            <a
-                              href={`https://${item.site}`}
-                              target="_blank"
-                              className="text-blue-300 max-w-[4ch] sm:max-w-none truncate text-[0.9rem] md:text-base"
-                            >
-                              {item.site}
-                            </a>
+                             {isValidSite ? (
+            <a
+              href={`https://${site}`}
+              target="_blank"
+              className="text-blue-300 max-w-[4ch] sm:max-w-none truncate text-[0.9rem] md:text-base"
+            >
+              {site}
+            </a>
+          ) : (
+            <span className="text-gray-400 max-w-[4ch] sm:max-w-none truncate text-[0.9rem] md:text-base">
+              {site}
+            </span>
+          )}
                             <div
                               onClick={() => {
                                 copyText(item.site);
