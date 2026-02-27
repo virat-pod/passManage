@@ -187,7 +187,7 @@ const manager = () => {
                           target="_blank"
                             className="text-blue-300 max-w-[4ch] sm:max-w-none truncate text-[0.9rem] md:text-base">
                             {site} </a> ) : (
-                          <span className="text-gray-400 max-w-[4ch] sm:max-w-none truncate text-[0.9rem] md:text-base">
+                          <span className="text-zinc-50 max-w-[4ch] sm:max-w-none truncate text-[0.9rem] md:text-base">
                               {site}
                                  </span>
                                          )}
