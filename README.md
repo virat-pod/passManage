@@ -30,5 +30,5 @@
 
 ```bash
 git clone https://github.com/virat-pod/passManage.git
-cd passmanage
+cd passManage
 ```
