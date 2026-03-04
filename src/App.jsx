@@ -5,7 +5,6 @@ import Manager from './components/manager'
 import Footer from './components/footer'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="flex flex-col min-h-full">
